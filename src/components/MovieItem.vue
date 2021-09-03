@@ -39,7 +39,14 @@ export default {
   },
   methods: {
     async init() {
-      await this.$loadImage(this.movie.Poster)
+      const poster = this.movie.Poster
+      if(!poster || poster === 'N/A') {
+        this.imageLoading = false
+      } else {
+        await this.$loadImage(poster)
+        this.imageLoading = false
+      }
+      await this.$loadImage(poster)
       this.imageLoading = false
     }
   }
