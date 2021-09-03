@@ -97,7 +97,7 @@ export default {
   },
   methods: {
     requestDiffSizeImage(url, size = 700) {
-      if(!url || url === 'N / A') {
+      if(!url || url === 'N/A') {
         this.imageLoading = false
         return ''
       }
